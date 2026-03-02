@@ -1,0 +1,934 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vieira & Montenegro | Advocacia Estratégica</title>
+  <!-- Fontes sofisticadas: Playfair Display (títulos) e Montserrat (corpo) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Ícones -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    /* RESET E VARIÁVEIS SOFISTICADAS */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      color: #1e2b2f;
+      background-color: #faf9f7;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    .container {
+      max-width: 1300px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    /* CORES SOFISTICADAS */
+    :root {
+      --primary-dark: #0a2e3f;      /* azul petróleo profundo */
+      --primary-medium: #1b4b5e;
+      --accent-gold: #c9a05e;        /* dourado elegante */
+      --accent-terra: #9c5e3d;        /* terracota suave */
+      --light-bg: #f5f0e9;
+      --text-dark: #1e2b2f;
+      --text-soft: #5b6f7a;
+      --white-soft: #fefcf8;
+    }
+
+    /* BOTÃO WHATSAPP refinado */
+    .btn-whatsapp {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+      background: linear-gradient(135deg, #25D366, #128C7E);
+      color: white;
+      font-weight: 600;
+      padding: 1rem 2.5rem;
+      border-radius: 60px;
+      text-decoration: none;
+      font-size: 1.2rem;
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 15px 30px -8px rgba(37, 211, 102, 0.35);
+      position: relative;
+      z-index: 2;
+      border: 1px solid rgba(255,255,255,0.2);
+      backdrop-filter: blur(5px);
+    }
+
+    .btn-whatsapp i {
+      font-size: 1.6rem;
+      filter: drop-shadow(0 2px 5px rgba(0,0,0,0.2));
+    }
+
+    .btn-whatsapp:hover {
+      transform: scale(1.05) translateY(-5px);
+      box-shadow: 0 25px 40px -5px #128C7E;
+      background: linear-gradient(135deg, #20b859, #0e6b5e);
+    }
+
+    /* BOTÃO SECUNDÁRIO COM OURO */
+    .btn-outline-gold {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      border: 2px solid var(--accent-gold);
+      color: var(--primary-dark);
+      background: transparent;
+      padding: 0.9rem 2.2rem;
+      border-radius: 60px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: 0.3s;
+      font-size: 1rem;
+    }
+
+    .btn-outline-gold:hover {
+      background: var(--accent-gold);
+      color: #0a2e3f;
+      border-color: var(--accent-gold);
+      box-shadow: 0 10px 20px -7px rgba(201, 160, 94, 0.5);
+    }
+
+    /* NAVBAR ATUALIZADO - sem botão de atendimento */
+    header {
+      background: rgba(10, 46, 63, 0.95);
+      backdrop-filter: blur(12px);
+      padding: 0.8rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid rgba(201, 160, 94, 0.3);
+    }
+
+    .header-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo h1 {
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--white-soft);
+      line-height: 1.1;
+      text-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+    }
+
+    .logo span {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.75rem;
+      letter-spacing: 4px;
+      color: var(--accent-gold);
+      display: block;
+      font-weight: 300;
+      text-transform: uppercase;
+    }
+
+    /* NAVBAR MENU */
+    .nav-menu {
+      display: flex;
+      gap: 2.5rem;
+      list-style: none;
+    }
+
+    .nav-menu a {
+      color: var(--white-soft);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 1rem;
+      letter-spacing: 0.5px;
+      transition: 0.3s;
+      position: relative;
+      padding-bottom: 0.3rem;
+    }
+
+    .nav-menu a:hover {
+      color: var(--accent-gold);
+    }
+
+    .nav-menu a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--accent-gold);
+      transition: 0.3s;
+    }
+
+    .nav-menu a:hover::after {
+      width: 100%;
+    }
+
+    /* HERO CINEMATOGRÁFICO */
+    .hero {
+      background: linear-gradient(112deg, #0a2e3f 0%, #1b4b5e 70%, #2c5a6e 100%);
+      position: relative;
+      overflow: hidden;
+      padding: 5rem 0 8rem;
+    }
+
+    .hero:before {
+      content: '';
+      position: absolute;
+      top: -30%;
+      right: -10%;
+      width: 700px;
+      height: 700px;
+      background: radial-gradient(circle, rgba(201,160,94,0.15) 0%, transparent 70%);
+      border-radius: 50%;
+      z-index: 0;
+    }
+
+    .hero:after {
+      content: '';
+      position: absolute;
+      bottom: -20%;
+      left: -5%;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(156,94,61,0.1) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+
+    .hero-grid {
+      display: flex;
+      align-items: center;
+      gap: 3rem;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-content {
+      flex: 1 1 500px;
+    }
+
+    .hero-content h2 {
+      font-size: 4rem;
+      font-weight: 800;
+      color: white;
+      line-height: 1.1;
+      margin-bottom: 1.5rem;
+      text-shadow: 0 5px 20px rgba(0,0,0,0.3);
+    }
+
+    .hero-content h2 i {
+      color: var(--accent-gold);
+      font-style: normal;
+      border-bottom: 3px solid var(--accent-gold);
+    }
+
+    .hero-content p {
+      font-size: 1.2rem;
+      color: rgba(255,255,255,0.85);
+      margin-bottom: 2.5rem;
+      max-width: 550px;
+      font-weight: 300;
+      line-height: 1.6;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      background: rgba(201,160,94,0.2);
+      backdrop-filter: blur(5px);
+      border: 1px solid rgba(201,160,94,0.5);
+      border-radius: 60px;
+      padding: 0.4rem 1.2rem;
+      margin-bottom: 1.5rem;
+      color: var(--accent-gold);
+      font-weight: 500;
+    }
+
+    .hero-stats {
+      display: flex;
+      gap: 2.5rem;
+      margin-top: 3rem;
+    }
+
+    .stat-item h3 {
+      font-size: 2rem;
+      color: var(--accent-gold);
+      margin-bottom: 0.2rem;
+    }
+
+    .stat-item p {
+      font-size: 0.9rem;
+      margin-bottom: 0;
+      color: rgba(255,255,255,0.7);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    /* HERO IMAGE - AGORA COM IMAGEM REAL DE ADVOGADOS */
+    .hero-image {
+      flex: 1 1 400px;
+      height: 550px;
+      border-radius: 30px;
+      overflow: hidden;
+      box-shadow: 0 30px 50px rgba(0,0,0,0.5);
+      border: 3px solid rgba(201,160,94,0.4);
+      position: relative;
+    }
+
+    .hero-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 20%;
+      transition: transform 0.5s ease;
+      display: block;
+    }
+
+    .hero-image:hover img {
+      transform: scale(1.03);
+    }
+
+    .hero-image::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(145deg, rgba(10,46,63,0.2) 0%, rgba(0,0,0,0.1) 100%);
+      pointer-events: none;
+    }
+
+    /* SERVIÇOS COM cards sofisticados */
+    .services {
+      background: var(--white-soft);
+      padding: 6rem 0;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 3rem;
+      color: var(--primary-dark);
+      margin-bottom: 1rem;
+    }
+
+    .section-subtitle {
+      text-align: center;
+      font-size: 1.1rem;
+      color: var(--text-soft);
+      max-width: 700px;
+      margin: 0 auto 4rem;
+      font-weight: 300;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+
+    .service-card {
+      background: white;
+      padding: 3rem 2rem;
+      border-radius: 30px;
+      box-shadow: 0 20px 40px -15px rgba(10,46,63,0.1);
+      transition: all 0.4s;
+      border: 1px solid rgba(201,160,94,0.1);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .service-card:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 5px;
+      height: 100%;
+      background: linear-gradient(to bottom, var(--accent-gold), var(--accent-terra));
+      transition: 0.3s;
+    }
+
+    .service-card:hover {
+      transform: translateY(-15px);
+      box-shadow: 0 35px 60px -15px rgba(10,46,63,0.3);
+      border-color: rgba(201,160,94,0.3);
+    }
+
+    .service-card i {
+      font-size: 3rem;
+      color: var(--accent-gold);
+      margin-bottom: 1.5rem;
+      transition: 0.3s;
+    }
+
+    .service-card:hover i {
+      transform: scale(1.1);
+      color: var(--primary-medium);
+    }
+
+    .service-card h3 {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+    }
+
+    /* DEPOIMENTOS COM CARROSSEL AUTOMATIZADO */
+    .testimonials {
+      background: var(--light-bg);
+      padding: 6rem 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .testimonials-carousel {
+      position: relative;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .testimonials-track {
+      display: flex;
+      transition: transform 0.8s ease-in-out;
+    }
+
+    .testimonial-card {
+      flex: 0 0 calc(33.333% - 2rem);
+      margin: 0 1rem;
+      background: white;
+      padding: 2rem;
+      border-radius: 30px;
+      box-shadow: 0 20px 30px -10px rgba(0,0,0,0.1);
+      border: 1px solid rgba(201,160,94,0.2);
+      transition: 0.3s;
+      min-width: 300px;
+    }
+
+    .testimonial-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--accent-gold);
+      box-shadow: 0 25px 40px -15px rgba(10,46,63,0.2);
+    }
+
+    .testimonial-card .stars {
+      color: var(--accent-gold);
+      font-size: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .testimonial-text {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: var(--text-dark);
+      margin-bottom: 1.5rem;
+      font-style: italic;
+    }
+
+    .client-info {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .client-avatar {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--primary-dark), var(--primary-medium));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: bold;
+      font-size: 1.2rem;
+      overflow: hidden;
+    }
+
+    .client-avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .client-name {
+      font-weight: 700;
+      font-size: 1rem;
+    }
+
+    .client-role {
+      font-size: 0.8rem;
+      color: var(--text-soft);
+    }
+
+    .carousel-dots {
+      display: flex;
+      justify-content: center;
+      gap: 0.8rem;
+      margin-top: 3rem;
+    }
+
+    .dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: rgba(201,160,94,0.3);
+      cursor: pointer;
+      transition: 0.3s;
+      border: 1px solid transparent;
+    }
+
+    .dot.active {
+      background: var(--accent-gold);
+      transform: scale(1.3);
+      border-color: var(--primary-dark);
+    }
+
+    .dot:hover {
+      background: var(--accent-gold);
+    }
+
+    /* GOOGLE MAPS + FORMULÁRIO LUXO */
+    .contact-premium {
+      padding: 6rem 0;
+      background: white;
+    }
+
+    .contact-premium .container {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 3rem;
+    }
+
+    .map-wrapper {
+      border-radius: 30px;
+      overflow: hidden;
+      box-shadow: 0 25px 40px -15px #0a2e3f;
+      height: 400px;
+      border: 3px solid var(--accent-gold);
+    }
+
+    .map-wrapper iframe {
+      width: 100%;
+      height: 100%;
+    }
+
+    .form-premium {
+      background: var(--light-bg);
+      padding: 3rem;
+      border-radius: 40px;
+      box-shadow: 0 25px 50px -15px rgba(10,46,63,0.3);
+      border: 1px solid var(--accent-gold);
+    }
+
+    .form-premium h3 {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      color: var(--primary-dark);
+    }
+
+    .input-group {
+      margin-bottom: 1.8rem;
+    }
+
+    .input-group input,
+    .input-group textarea {
+      width: 100%;
+      padding: 1.1rem 1.5rem;
+      border: 2px solid transparent;
+      border-radius: 60px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1rem;
+      background: white;
+      transition: 0.3s;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.02);
+    }
+
+    .input-group textarea {
+      border-radius: 30px;
+      resize: vertical;
+    }
+
+    .input-group input:focus,
+    .input-group textarea:focus {
+      outline: none;
+      border-color: var(--accent-gold);
+      box-shadow: 0 10px 25px -10px #c9a05e;
+    }
+
+    .btn-form-gold {
+      background: var(--primary-dark);
+      color: white;
+      border: none;
+      width: 100%;
+      padding: 1.2rem;
+      font-weight: 700;
+      font-size: 1.2rem;
+      border-radius: 60px;
+      cursor: pointer;
+      transition: 0.3s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.8rem;
+      border: 2px solid var(--accent-gold);
+    }
+
+    .btn-form-gold:hover {
+      background: var(--primary-medium);
+      transform: scale(1.02);
+      box-shadow: 0 15px 30px -8px #0a2e3f;
+    }
+
+    /* FLOAT WHATSAPP MAIS DINÂMICO */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 2.5rem;
+      right: 2.5rem;
+      background: linear-gradient(145deg, #25D366, #128C7E);
+      color: white;
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3rem;
+      box-shadow: 0 15px 35px #128C7E;
+      transition: 0.3s;
+      z-index: 99;
+      text-decoration: none;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+      70% { box-shadow: 0 0 0 20px rgba(37, 211, 102, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+    }
+
+    .whatsapp-float:hover {
+      transform: scale(1.15) rotate(5deg);
+      background: #20b859;
+    }
+
+    footer {
+      background: var(--primary-dark);
+      color: rgba(255,255,255,0.6);
+      padding: 3rem 0;
+      text-align: center;
+      border-top: 3px solid var(--accent-gold);
+    }
+
+    @media (max-width: 900px) {
+      .hero-grid, .contact-premium .container {
+        grid-template-columns: 1fr;
+      }
+      .hero-content h2 { 
+        font-size: 3rem; 
+      }
+      .nav-menu {
+        display: none; /* Em mobile precisaria de um menu hambúrguer, mas manteremos assim por enquanto */
+      }
+      .testimonial-card {
+        flex: 0 0 calc(100% - 2rem);
+      }
+      .hero-image {
+        height: 400px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container header-content">
+      <div class="logo">
+        <h1>Vieira & Montenegro</h1>
+        <span>ADVOCACIA ESTRATÉGICA</span>
+      </div>
+      <!-- NAVBAR ATUALIZADO - sem botão de WhatsApp -->
+      <ul class="nav-menu">
+        <li><a href="#home">Início</a></li>
+        <li><a href="#servicos">Serviços</a></li>
+        <li><a href="#depoimentos">Depoimentos</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <section class="hero" id="home">
+    <div class="container hero-grid">
+      <div class="hero-content">
+        <div class="hero-badge"><i class="fas fa-scale-balanced"></i> Estratégia & Excelência</div>
+        <h2>Onde o <i>direito</i> encontra a solução.</h2>
+        <p>Atendimento ágil e personalizado com os melhores especialistas do país. Sua causa merece uma abordagem única e sofisticada.</p>
+        <div style="display: flex; gap: 1.5rem; flex-wrap: wrap;">
+          <a href="https://wa.me/5511999999999?text=Preciso%20de%20um%20advogado%20agora%20-%20atendimento%20estrat%C3%A9gico." target="_blank" class="btn-whatsapp">
+            <i class="fab fa-whatsapp"></i> Conversar agora
+          </a>
+          <a href="#servicos" class="btn-outline-gold"><i class="fas fa-chevron-down"></i> Nossas áreas</a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat-item">
+            <h3>+2.500</h3>
+            <p>causas resolvidas</p>
+          </div>
+          <div class="stat-item">
+            <h3>27</h3>
+            <p>estados atendidos</p>
+          </div>
+          <div class="stat-item">
+            <h3>15</h3>
+            <p>anos de tradição</p>
+          </div>
+        </div>
+      </div>
+      <div class="hero-image">
+        <!-- Imagem de advogados que transmite confiança e credibilidade -->
+        <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?q=80&w=1920&auto=format&fit=crop" alt="Equipe de advogados confiantes em reunião - Escritório Vieira & Montenegro" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <section class="services" id="servicos">
+    <div class="container">
+      <h2 class="section-title">Áreas de atuação</h2>
+      <div class="section-subtitle">Soluções jurídicas completas e personalizadas para pessoas físicas e empresas.</div>
+      <div class="services-grid">
+        <div class="service-card"><i class="fas fa-gavel"></i><h3>Cível</h3><p>Contratos, responsabilidade civil, direito imobiliário e sucessões.</p></div>
+        <div class="service-card"><i class="fas fa-briefcase"></i><h3>Trabalhista</h3><p>Reclamações, acordos coletivos e defesa em audits fiscais.</p></div>
+        <div class="service-card"><i class="fas fa-hand-holding-heart"></i><h3>Previdenciário</h3><p>Aposentadorias, revisões e benefícios assistenciais.</p></div>
+        <div class="service-card"><i class="fas fa-building"></i><h3>Empresarial</h3><p>Contratos societários, recuperação e compliance.</p></div>
+        <div class="service-card"><i class="fas fa-balance-scale"></i><h3>Penal</h3><p>Defesa criminal, inquéritos e tribunais do júri.</p></div>
+        <div class="service-card"><i class="fas fa-leaf"></i><h3>Ambiental</h3><p>Licenciamento, danos ambientais e termo de ajustamento.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="testimonials" id="depoimentos">
+    <div class="container">
+      <h2 class="section-title">O que nossos clientes falam</h2>
+      <div class="section-subtitle">Confiança construída ao longo de gerações.</div>
+      
+      <div class="testimonials-carousel">
+        <div class="testimonials-track" id="testimonialsTrack">
+          <!-- Depoimento 1 -->
+          <div class="testimonial-card">
+            <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+            <p class="testimonial-text">“Sensacionais. Resolveram um processo complexo em poucos meses, sempre com atualizações precisas pelo WhatsApp. Me senti acolhido.”</p>
+            <div class="client-info">
+              <div class="client-avatar"><img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Rodrigo M." loading="lazy"></div>
+              <div><p class="client-name">Rodrigo M.</p><p class="client-role">Empresário - SP</p></div>
+            </div>
+          </div>
+          <!-- Depoimento 2 -->
+          <div class="testimonial-card">
+            <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+            <p class="testimonial-text">“Escritório sério e moderno. Conseguiram reverter uma decisão desfavorável com uma estratégia brilhante. Recomendo fortemente.”</p>
+            <div class="client-info">
+              <div class="client-avatar"><img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Laura C." loading="lazy"></div>
+              <div><p class="client-name">Laura C.</p><p class="client-role">Médica - RJ</p></div>
+            </div>
+          </div>
+          <!-- Depoimento 3 -->
+          <div class="testimonial-card">
+            <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+            <p class="testimonial-text">“Atendimento nota 1000. Dra. Montenegro é extremamente competente e humana. Meu processo previdenciário foi resolvido em tempo recorde.”</p>
+            <div class="client-info">
+              <div class="client-avatar"><img src="https://randomuser.me/api/portraits/men/75.jpg" alt="José S." loading="lazy"></div>
+              <div><p class="client-name">José S.</p><p class="client-role">Aposentado - MG</p></div>
+            </div>
+          </div>
+          <!-- Depoimento 4 -->
+          <div class="testimonial-card">
+            <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+            <p class="testimonial-text">“Equipe extremamente profissional. Resolveram minha causa trabalhista em tempo recorde. Recomendo a todos.”</p>
+            <div class="client-info">
+              <div class="client-avatar"><img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Carla M." loading="lazy"></div>
+              <div><p class="client-name">Carla M.</p><p class="client-role">Administradora - BA</p></div>
+            </div>
+          </div>
+          <!-- Depoimento 5 -->
+          <div class="testimonial-card">
+            <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+            <p class="testimonial-text">“Atendimento humanizado e muito competente. Explicaram todos os passos do meu processo com clareza. Nota 10!”</p>
+            <div class="client-info">
+              <div class="client-avatar"><img src="https://randomuser.me/api/portraits/men/22.jpg" alt="Paulo R." loading="lazy"></div>
+              <div><p class="client-name">Paulo R.</p><p class="client-role">Engenheiro - RS</p></div>
+            </div>
+          </div>
+          <!-- Depoimento 6 -->
+          <div class="testimonial-card">
+            <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+            <p class="testimonial-text">“Resolvi uma questão de direito de família complexa. Profissionais incríveis e muito atenciosos.”</p>
+            <div class="client-info">
+              <div class="client-avatar"><img src="https://randomuser.me/api/portraits/women/33.jpg" alt="Fernanda L." loading="lazy"></div>
+              <div><p class="client-name">Fernanda L.</p><p class="client-role">Psicóloga - PR</p></div>
+            </div>
+          </div>
+          <!-- Depoimento 7 -->
+          <div class="testimonial-card">
+            <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+            <p class="testimonial-text">“Excelente escritório! Me ajudaram com um contrato empresarial complexo. Muita segurança e confiança.”</p>
+            <div class="client-info">
+              <div class="client-avatar"><img src="https://randomuser.me/api/portraits/men/62.jpg" alt="Ricardo T." loading="lazy"></div>
+              <div><p class="client-name">Ricardo T.</p><p class="client-role">Empresário - SC</p></div>
+            </div>
+          </div>
+          <!-- Depoimento 8 -->
+          <div class="testimonial-card">
+            <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+            <p class="testimonial-text">“Conseguiram reverter uma negativa do INSS que eu tentava há 2 anos. Gratidão eterna à equipe!”</p>
+            <div class="client-info">
+              <div class="client-avatar"><img src="https://randomuser.me/api/portraits/women/17.jpg" alt="Tereza C." loading="lazy"></div>
+              <div><p class="client-name">Tereza C.</p><p class="client-role">Professora - CE</p></div>
+            </div>
+          </div>
+          <!-- Depoimento 9 -->
+          <div class="testimonial-card">
+            <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+            <p class="testimonial-text">“Profissionais atualizados e com grande capacidade técnica. Resolveram minha causa cível com excelência.”</p>
+            <div class="client-info">
+              <div class="client-avatar"><img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Marcos V." loading="lazy"></div>
+              <div><p class="client-name">Marcos V.</p><p class="client-role">Arquiteto - DF</p></div>
+            </div>
+          </div>
+          <!-- Depoimento 10 -->
+          <div class="testimonial-card">
+            <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+            <p class="testimonial-text">“Atendimento rápido e eficiente. Tudo resolvido pelo WhatsApp sem burocracia. Escritório moderno e confiável.”</p>
+            <div class="client-info">
+              <div class="client-avatar"><img src="https://randomuser.me/api/portraits/women/54.jpg" alt="Amanda F." loading="lazy"></div>
+              <div><p class="client-name">Amanda F.</p><p class="client-role">Designer - PE</p></div>
+            </div>
+          </div>
+          <!-- Depoimento 11 -->
+          <div class="testimonial-card">
+            <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+            <p class="testimonial-text">“Só tenho a agradecer pelo empenho e dedicação. Meu caso era complicado, mas eles conseguiram a melhor solução.”</p>
+            <div class="client-info">
+              <div class="client-avatar"><img src="https://randomuser.me/api/portraits/men/85.jpg" alt="Gustavo H." loading="lazy"></div>
+              <div><p class="client-name">Gustavo H.</p><p class="client-role">Médico - GO</p></div>
+            </div>
+          </div>
+          <!-- Depoimento 12 -->
+          <div class="testimonial-card">
+            <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+            <p class="testimonial-text">“Escritório de primeira linha. Recomendo a todos que buscam um serviço jurídico de qualidade e com atendimento personalizado.”</p>
+            <div class="client-info">
+              <div class="client-avatar"><img src="https://randomuser.me/api/portraits/women/96.jpg" alt="Patrícia N." loading="lazy"></div>
+              <div><p class="client-name">Patrícia N.</p><p class="client-role">Empresária - AM</p></div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="carousel-dots" id="carouselDots">
+          <!-- Dots serão gerados via JavaScript -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact-premium" id="contato">
+    <div class="container">
+      <div class="map-wrapper">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.0754267454017!2d-46.65382368538368!3d-23.56573436763844!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59c8da0aa315%3A0xd59f9431f2c9776a!2sAv.%20Paulista%2C%201500%20-%20Bela%20Vista%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2001310-200!5e0!3m2!1spt-BR!2sbr!4v1620000000000!5m2!1spt-BR!2sbr" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+      </div>
+      <div class="form-premium">
+        <h3>Fale com um especialista</h3>
+        <form id="leadForm">
+          <div class="input-group"><input type="text" placeholder="Seu nome" required></div>
+          <div class="input-group"><input type="email" placeholder="E-mail corporativo" required></div>
+          <div class="input-group"><input type="tel" placeholder="WhatsApp (com DDD)" required></div>
+          <div class="input-group"><textarea rows="4" placeholder="Resumo do caso..."></textarea></div>
+          <button type="submit" class="btn-form-gold"><i class="fab fa-whatsapp"></i> Quero atendimento via WhatsApp</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p><span style="color: var(--accent-gold);">Vieira & Montenegro Advocacia</span> — atuação em todo território nacional</p>
+    <p style="margin-top: 1rem;">OAB/SP 12.345 | OAB/RJ 67.890</p>
+  </footer>
+
+  <a href="https://wa.me/5511999999999?text=Ol%C3%A1%2C%20vi%20o%20site%20e%20quero%20falar%20com%20um%20advogado%20agora." target="_blank" class="whatsapp-float" aria-label="WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <script>
+    // Carrossel automatizado
+    const track = document.getElementById('testimonialsTrack');
+    const dotsContainer = document.getElementById('carouselDots');
+    const cards = document.querySelectorAll('.testimonial-card');
+    const cardStyle = getComputedStyle(cards[0]);
+    const cardWidth = cards[0].offsetWidth + parseInt(cardStyle.marginLeft) + parseInt(cardStyle.marginRight);
+    let currentIndex = 0;
+    const totalCards = cards.length;
+    const visibleCards = window.innerWidth > 900 ? 3 : 1;
+    const maxIndex = totalCards - visibleCards;
+
+    // Criar dots
+    for (let i = 0; i <= maxIndex; i++) {
+      const dot = document.createElement('div');
+      dot.classList.add('dot');
+      dot.addEventListener('click', () => goToSlide(i));
+      dotsContainer.appendChild(dot);
+    }
+    
+    const dots = document.querySelectorAll('.dot');
+    if (dots.length > 0) dots[0].classList.add('active');
+
+    function goToSlide(index) {
+      if (index < 0) index = 0;
+      if (index > maxIndex) index = maxIndex;
+      
+      currentIndex = index;
+      track.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
+      
+      // Atualizar dots
+      dots.forEach((dot, i) => {
+        dot.classList.toggle('active', i === currentIndex);
+      });
+    }
+
+    // Autoplay
+    setInterval(() => {
+      if (currentIndex >= maxIndex) {
+        goToSlide(0);
+      } else {
+        goToSlide(currentIndex + 1);
+      }
+    }, 4000); // Muda a cada 4 segundos
+
+    // Formulário
+    const form = document.getElementById('leadForm');
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const nome = form.querySelector('input[type="text"]').value || 'cliente';
+      const tel = form.querySelector('input[type="tel"]').value || 'não informado';
+      const msg = `Olá, sou ${nome}. Meu WhatsApp é ${tel}. Gostaria de uma análise estratégica.`;
+      window.open(`https://wa.me/5511999999999?text=${encodeURIComponent(msg)}`, '_blank');
+    });
+
+    // Recalcular cardWidth em caso de redimensionamento
+    window.addEventListener('resize', () => {
+      const newCardWidth = cards[0].offsetWidth + parseInt(cardStyle.marginLeft) + parseInt(cardStyle.marginRight);
+      if (newCardWidth !== cardWidth) {
+        location.reload(); // Simplificando: recarrega para recalcular tudo
+      }
+    });
+  </script>
+</body>
+</html>
